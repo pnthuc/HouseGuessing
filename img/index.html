@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhập chữ số</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      color: #2d3436;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #6c5ce7;
+    }
+    .inputs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .inputs input {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border: 2px solid #dfe6e9;
+      border-radius: 5px;
+      text-align: center;
+      transition: border-color 0.3s ease;
+    }
+    .inputs input:focus {
+      border-color: #6c5ce7;
+      outline: none;
+    }
+    button {
+      background: #6c5ce7;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #a29bfe;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Nhập Chữ Số</h1>
+    <div class="inputs">
+      <input type="number" id="x1" placeholder="x1" min="0" max="9">
+      <input type="number" id="x2" placeholder="x2" min="0" max="9">
+      <input type="number" id="x3" placeholder="x3" min="0" max="9">
+      <input type="number" id="x4" placeholder="x4" min="0" max="9">
+      <input type="number" id="x5" placeholder="x5" min="0" max="9">
+      <input type="number" id="x6" placeholder="x6" min="0" max="9">
+    </div>
+    <button onclick="submitValues()">Xác Nhận</button>
+  </div>
+
+  <script>
+    function submitValues() {
+      const values = [];
+      for (let i = 1; i <= 6; i++) {
+        const input = document.getElementById('x' + i);
+        values.push(input.value || 0);
+      }
+      alert('Các giá trị đã nhập: ' + values.join(', '));
+    }
+  </script>
+</body>
+</html>
